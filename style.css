@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  /* Use CSS Grid for page layout */
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer"; /* On small screens, everything stacks */
+}
+
+header {
+  grid-area: header;
+  background: #313030;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Cards container uses Flexbox */
+.cards {
+  display: flex;          
+  gap: 1rem;        
+  margin-top: 1rem;
+  flex-wrap: wrap;  
+}
+
+/* Each individual card */
+.card {
+  flex: 1 1 150px; 
+  background: #ddd;
+  padding: 1rem;
+  text-align: center;
+}
+
+aside {
+  grid-area: aside;
+  background: #f4f4f4;
+  padding: 1rem;
+}
+
+/* Media query: apply when screen is 600px or wider */
+@media (min-width: 600px) {
+  body {
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+      "header header"
+      "main aside"
+      "footer footer";
+  }
+}
